@@ -1,42 +1,92 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+:root {
+  --primary-fw: 600;
+  --secondary-fw: 400;
+  --thirdary-fw: 200;
+  --fs: 15px;
+  --primary-red: hsl(0, 78%, 62%);
+  --primary-cyan: hsl(180, 62%, 55%);
+  --primary-orange: hsl(34, 97%, 64%);
+  --primary-blue: hsl(212, 86%, 64%);
+  --neutral-dark-blue: hsl(234, 12%, 34%);
+  --neutral-grayish-blue: hsl(229, 6%, 66%);
+  --neutral-light-gray: hsl(0, 0%, 98%);
+}
+
+.App {
+  font-family: 'Inter', sans-serif;
+  font-weight: var(--primary-fw);
+  display: grid;
+  place-items: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.light {
+  font-weight: var(--thirdary-fw);
+}
+
+.center {
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.Card {
+  
+  overflow: hidden;
+  max-width: 20rem;
+  border: none;
+  position: relative;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 15px 1px var(--neutral-grayish-blue);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.Card img {
+  margin-top: 2rem;
+  margin-left: auto;
+}
+
+.Card .line {
+  height: 4px;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.Card .line.red {
+  background-color: var(--primary-red);
+}
+
+.Card .line.green {
+  background-color: var(--primary-cyan);
+}
+
+.Card .line.blue {
+  background-color: var(--primary-blue);
+}
+
+.Card .line.yellow {
+  background-color: var(--primary-orange);
+}
+
+.App .grid {
+  margin: 4rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-items: center;
+  gap: 2rem;
+}
+
+.App .grid .column {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (max-width : 700px){
+  .App .grid {
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

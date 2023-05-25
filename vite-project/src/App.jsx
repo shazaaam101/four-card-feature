@@ -1,35 +1,57 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import "./App.css";
+import Card from "./components/Card";
+import svgKarma from "./images/icon-karma.svg";
+import svgCalculator from "./images/icon-calculator.svg";
+import svgSupervisor from "./images/icon-supervisor.svg";
+import svgTeamBuilder from "./images/icon-team-builder.svg";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+    <div className="App">
+      <header className="center">
+        <h1>
+          <span className="light">Reliable, efficient delivery</span>
+          <br />
+          Powered by Technology
+        </h1>
+
+        <p className="light">
+          Our Aritificial Intelligence powerd tools use millions of project data
+          <br />
+          points to ensure that your project is successful
         </p>
+      </header>
+
+      <div className="grid">
+        <Card
+          title="Supervisor"
+          detail="Monitors activity to identify project roadblocks"
+          svgSrc={svgSupervisor}
+          colorTheme="green"
+        />
+        <div className="column">
+          <Card
+            title="Team Builder"
+            detail="Scans our talent network to create the optimal team for your project"
+            svgSrc={svgTeamBuilder}
+            colorTheme="red"
+          />
+          <Card
+            title="Karma"
+            detail="Regularly evaluates our talent to ensure quality"
+            svgSrc={svgKarma}
+            colorTheme="yellow"
+          />
+        </div>
+
+        <Card
+          title="Calculator"
+          detail="Uses data from past projects to provide better delivery estimates"
+          svgSrc={svgCalculator}
+          colorTheme="blue"
+        />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
